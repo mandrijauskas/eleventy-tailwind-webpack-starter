@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
 
+  // minify html
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (
       process.env.ELEVENTY_PRODUCTION &&
