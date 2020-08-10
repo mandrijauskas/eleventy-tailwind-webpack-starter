@@ -7,9 +7,9 @@
     "clean": "rm -rf _site",
     "serve": "npm run clean & npm run serve:webpack & npm run serve:eleventy",
     "serve:webpack": "webpack --mode development --watch",
-    "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
+    "serve:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --config=.eleventy.js & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
     "build:webpack": "webpack --mode production",
-    "build:eleventy": "ELEVENTY_ENV=production eleventy & NODE_ENV=production postcss src/styles/tailwind.css --o _site/style.css",
+    "build:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --config=.eleventy.js & NODE_ENV=production postcss src/styles/tailwind.css --o _site/style.css",
     "build": "npm run clean & npm run build:webpack & npm run build:eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
