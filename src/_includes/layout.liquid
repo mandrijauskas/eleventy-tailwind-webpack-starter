@@ -3,11 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>My Blog</title>
+    {% if description %}
+      <meta name="description" content="{{description}}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
     <link rel="stylesheet" href="/style.css"/>
+    {% block head %}{% endblock %}
   </head>
   <body>
-    <h1>{{ pageTitle }}</h1>
-    {{ content }}
+    {% block content %}
+      <div class="fixed inset-0 flex justify-center items-center">
+        <h1 class="block">{{ pageTitle }}</h1>
+        <div>{{ content | safe }}</div>
+      </div>
+    {% endblock %}
     <script src="/assets/main.js"></script>
   </body>
 </html>
