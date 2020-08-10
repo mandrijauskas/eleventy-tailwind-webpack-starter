@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="/style.css"/>
     {% block head %}{% endblock %}
   </head>
-  <body>
+  <body class="md:flex">
     {% block content %}
-      <div class="fixed inset-0 flex justify-center items-center">
-        <h1 class="block">{{ pageTitle }}</h1>
-        <div>{{ content | safe }}</div>
+      <div class="mt-4 md:mt-0 md:ml-6">
+        <h1 class="uppercase tracking-wide text-sm font-bold">{{ pageTitle }}</h1>
+        <div class="block mt-1 text-lg">{{ content | safe }}</div>
       </div>
     {% endblock %}
     <script src="/assets/main.js"></script>
